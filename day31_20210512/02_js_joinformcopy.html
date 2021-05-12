@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+    <!-- js파일 import -->
+    <script src="../js/joinformcopy.js"></script>
+
+    <!-- css 파일 import -->
+    <link rel="stylesheet" href="../css/joinform.css">
+
+</head>
+<body>
+    <!-- js 폴더 만들어서 joinform.js 파일 만들기  -->
+    <!-- css 폴더 만들어서 joinform.css 파일 만들기  -->
+    <h2>회원가입</h2>
+        아이디: 
+            <input type="text" id="id" placeholder="6~10자리, 소문자, 숫자포함" onblur="idCheck()"> 
+            <span id="id-check-result"></span> <br>
+        비밀번호: 
+            <input type="text" id="pw" placeholder="8~16자리,숫자,대소문자,특수문자포함" onblur="pwCheck()">
+            <span id="pw-check-result"></span> <br>
+        비밀번호 확인: 
+            <input type="text" id="pw-confirm" onblur="pwConfirm()">
+            <span id="pw-confirm-result"></span> <br>
+        이름: 
+            <input type="text" id="name" onblur="nameCheck()"> 
+            <span id="name-check-result"></span> <br>
+        이메일:
+            <input type="text" id="email">@
+            <input type="text" id="domain">
+            <select id="domain-select" onchange="emailSelect(this.value)">
+                <option value="">직접입력</option>
+                <option value="naver.com">naver.com</option>
+                <option value="hanmail.net">hanmail.net</option>
+                <option value="gmail.com">gmail.com</option>
+            </select> <br>
+    
+        휴대폰번호 : 
+            <input type="text" id="phone" onblur="phoneCheck()">
+            <span id="phone-check-result"></span> <br>
+    
+        주소: 
+            <input type="text" id="sample4_postcode" placeholder="우편번호">
+            <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+            <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+            <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+            <span id="guide" style="color:#999;display:none"></span>
+            <input type="text" id="sample4_detailAddress" placeholder="상세주소">
+            <input type="text" id="sample4_extraAddress" placeholder="참고항목">
+
+
+            <button class="button">회원가입</button>
+</body>
+</html>

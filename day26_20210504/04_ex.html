@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My homepage</title>
+    <style>
+        p {
+            color: red;
+        }
+        #intro {
+            /* background-color: red; */
+            border: 5px green solid;
+        }
+        #contents {
+            border: 5px purple solid;
+        }
+        #schedule {
+            border: 5px blue solid;
+        }
+        table,tr,td,th {
+            border: 3px red solid;
+            border-collapse: collapse;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/f63dd08b62.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <p>빨간색 글자는 모두 안내문구 이며, p태그로 작성함.</p>
+    <p>각 영역은 div로 구성함.</p>
+    <div id="intro">
+        <h4>intro 영역</h4>
+        <h2>My Homepage</h2>
+        <img src="../images/img1.jpg" width="200" height="100" alt="프로그래머 그림"> <br>
+        <b>SW 개발자</b>를 꿈꾸며 열심히 공부하고 있습니다.
+    </div>
+    
+    <div id="contents">
+        <h4>contents 영역</h4>
+        <h3>현재 관심분야</h3>
+        <ul>
+            <li>JAVA <img src="../images/img1.jpg" style="width: 80px; height: 50px;"></li>
+            <li>frontend</li>
+            <li>백엔드 개발자</li>
+            <li><a href="https://www.google.com" target="_blank">구글링</a></li>
+            <li><a href="https://www.instagram.com" target="_blank">
+                <i class="fab fa-instagram" style="font-size: 50px;"></i></a></li>
+        </ul>
+    </div>
+    
+    <div id="schedule">
+        <h4>schedule 영역</h4>
+        <h3>주요 일정</h3>
+        <table>
+            <caption>계획</caption>
+            <tr>
+                <th>7월</th>
+                <th>9월</th>
+                <th>10월</th>
+            </tr>
+            <tr>
+                <td>프로젝트</td>
+                <td>수료 및 구직활동</td>
+                <td>직장인</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

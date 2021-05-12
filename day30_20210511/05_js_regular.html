@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function idcheck() {
+            // 영문소문자, 숫자, 6~10자리 정규식 
+            // 소문자 숫자가 반드시 1개 이상 사용되어야 함. 
+            var exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{6,10}$/;
+            
+            // 영문대소문자, 숫자, 6~10자리 정규식 
+            // 소문자, 대문자, 숫자가 반드시 1개이상 사용되어야 함. 
+            var exp1 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,10}$/;
+            
+            // 네이버 아이디 정규식 
+            // 영문소문자, 숫자, -_ 특수문자, 5~20자리
+            // 소문자, 숫자, 특수문자(-_)가 반드시 1개 이상 사용되어야 함. 
+            var exp = /^(?=.*[a-z])(?=.*\d)(?=.*[-_])[a-z\d-_]{5,20}$/; 
+            // 소문자, 숫자, 특수문자(-_)중에서만 사용하면 됨. 모두 1개 이상 쓰지 않아도 됨. 
+            exp = /^[a-z\d-_]{5,20}$/;
+            // 소괄호 내용 : 반드시 1개 이상은 사용되어야 함. 
+            var id = document.getElementById('id').value;
+            var result = document.getElementById('idcheck');
+            
+            if(id.length==0){
+                result.style.color = 'red';
+                result.innerHTML = '필수입력정보입니다.';
+            } else if(id.match(exp)){
+                result.style.color = 'green';
+                result.innerHTML = '유효한 id 형식입니다.';
+            } else {
+                result.style.color = 'red';
+                result.innerHTML = '6~10글자 숫자, 영문 소문자를 사용해주세요';
+            }
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <!-- 정규식(regular expression) -->
+    아이디: <input type="text" id="id" onblur="idcheck()" placeholder="영문소문자, 숫자, 6~10글자 이내로 입력해주세요"><br>
+    
+    <span id="idcheck"></span>
+    <button onclick="idcheck()">id정규식체크</button>
+    <p>아이디를 입력하지 않으면 필수정보입니다.가 빨간색으로 출력되고 
+        정규식을 만족하지 않는 값을 입력하면 유효하지 않은 형식입니다 라고 출력
+    </p>
+    
+</body>
+</html>
